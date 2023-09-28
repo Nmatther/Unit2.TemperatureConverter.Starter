@@ -9,9 +9,8 @@ function convertToCelsius(fahren) {
 
   let celc = (fahren - 32)*(5/9);
 
-  return celc;
+  return Number.parseFloat(celc).toFixed(2);
 }
-console.log(convertToCelsius(76));
 /**
  * Takes both numbers (F, C) and display a message with
  * both numbers and how that temp makes you feel using
@@ -30,16 +29,16 @@ console.log(convertToCelsius(76));
 function createMessage(fahren, celc) {
 
   if (fahren < 32) {
-    return 'The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is very cold'; 
+    return `The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is very cold`; 
   }
   else if (fahren < 64) {
-    return 'The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is cold';
+    return `The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is cold`;
   }
   else if (fahren < 86) {
-    return 'The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is warm';
+    return `The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is warm`;
   }
   else if (fahren <100) {
-    return 'The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is hot';
+    return `The Temperature is ${fahren} Fahrenheit, ${celc} Celcius, which is hot`;
   }
 
 }
@@ -49,7 +48,11 @@ function createMessage(fahren, celc) {
  * @param {number} limit
  * @returns {number} a number between 0 and the int passed in
  */
-function rand(limit) {}
+function rand(limit) {
+
+    return Math.floor(Math.random()*limit);
+
+}
 
 // -------------------- DONT NOT CHANGE THE CODE BELOW ---------------------- //
 
@@ -76,3 +79,5 @@ fahren = rand(110);
 celc = convertToCelsius(fahren);
 output = createMessage(fahren, celc);
 console.log(output);
+
+stop()
